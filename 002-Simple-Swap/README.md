@@ -21,12 +21,3 @@ Core Functionality
 * Token Swapping: The swapExactTokensForTokens function allows users to exchange a precise amount of one token for the corresponding amount of the other, determined by the AMM's constant product formula.
 * Price Oracle: The getPrice function provides a conceptual spot price of one token relative to the other within the pool.
   
-## Technical Design
-* Constant Product AMM: Employs the classic formula for determining exchange rates, ensuring balanced liquidity.
-No Swap Fees: This implementation intentionally excludes any trading fees, simplifying the economic model.
-* Slippage Control: All liquidity and swap functions include minAmount or amountOutMin parameters to protect users from unfavorable price movements due to slippage.
-* Deadline Protection: Transaction functions incorporate a deadline parameter to prevent front-running attacks by invalidating transactions executed after a specified timestamp.
-* Canonical Token Ordering: Internally, TOKEN_A_ADDRESS is always the numerically smaller address of the pair, ensuring consistent handling of token reserves and calculations.
-
-
-
